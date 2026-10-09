@@ -1,0 +1,50 @@
+type Color = tuple[int, int, int]
+
+SCREEN_WIDTH = 500
+SCREEN_HEIGHT = 500
+FPS = 60
+
+TANK_WIDTH = 26
+TANK_HEIGHT = 36
+
+TILE_COUNT = 7
+TILE_SIZE = SCREEN_WIDTH // TILE_COUNT
+MAZE_OFFSET_X = (SCREEN_WIDTH - TILE_SIZE * TILE_COUNT) // 2
+MAZE_OFFSET_Y = (SCREEN_HEIGHT - TILE_SIZE * TILE_COUNT) // 2
+WALL_THICKNESS = 6  # NOTE: keep even
+
+# Bullets
+BULLET_RADIUS = 3
+BULLET_SPEED = 250 # px/s
+BULLET_RICOCHETS = 5
+BULLET_LIFETIME = 8.0 # s
+MAX_BULLETS_PER_TANK = 5
+SHOOT_COOLDOWN = 0.25 # s
+
+# Game
+ENEMY_COUNT = 3
+
+# Colors
+BG_COLOR: Color = (30, 30, 36)
+WALL_COLOR: Color = (200, 200, 210)
+PLAYER_COLOR: Color = (70, 190, 90)
+ENEMY_COLOR: Color = (200, 70, 70)
+BULLET_COLOR: Color = (250, 230, 120)
+
+SHIELD_COLOR: Color = (90, 200, 255)
+SHIELD_GRACE = 0.6 # s
+
+POWERUP_SIZE = 25
+POWERUP_SPAWN_INTERVAL = (4.0, 9.0)  # s between spawns
+MAX_POWERUPS = 3
+
+# 0: dumb, 1: perfect
+ENEMY_DIFFICULTY = 1
+
+# 0: PVE, 1: ffa
+ENEMY_PLAYER_PRIORITY = 1
+
+# Tank headlight triangle
+LIGHT_LENGTH = 40
+LIGHT_WIDTH = 50
+LIGHT_ALPHA = 120    # opacity at the nose, fades to 0 at the tip
