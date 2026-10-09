@@ -85,7 +85,7 @@ class GameManager:
         self.ais = [EnemyAI(e, profile) for e in self.enemies]
         self.state = "playing" # "playing" | "won" | "lost"
         self.powerups = []
-        for _ in range(MAX_POWERUPS):       # start with a full set on the map
+        for _ in range(MAX_POWERUPS):
             self._spawn_powerup()
         self.powerup_timer = random.uniform(*POWERUP_SPAWN_INTERVAL)
 
@@ -111,7 +111,7 @@ class GameManager:
                                  (keys[pygame.K_a] or keys[pygame.K_LEFT])
         self.player.point_gun(Vector2(pygame.mouse.get_pos()))
         if self.player.gunParams.hold_to_fire and (pygame.mouse.get_pressed()[0] or keys[pygame.K_SPACE]):
-            self.player.shoot()   # shoot() enforces the cooldown and ammo
+            self.player.shoot()
 
     def update(self, dt: float) -> None:
         if self.debug.paused:
